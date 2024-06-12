@@ -36,7 +36,7 @@ jobs:
             image=$(echo "$line" | awk '{print $NF}')
             echo "image $image"
             # 获取镜像名:版本号  例如nginx:1.25.3
-            image_name_tag=$(echo "$image" | awk -F'/' '{print $NF}')
+            image_name_tag=$(echo "$image" | awk -F'/' '{ print $1, substr($0, length($1)+1) }')
             echo "image_name_tag $image_name_tag"
             # 获取命名空间
             name_space=$(echo "$image" | awk -F'/' '{if (NF>1) print $1}'| awk '{print $1}')
