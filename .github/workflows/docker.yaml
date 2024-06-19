@@ -32,8 +32,8 @@ jobs:
             image=$(echo "$line" | awk '{print $1}')
             echo "docker pull $image"
             docker pull $image
-            new_image_name_tag = $(echo "$line" | awk '{print $2}')
-            echo "new image name: $name_space_prefix$image_name_tag"
+            new_image_name_tag=$(echo "$line" | awk '{print $2}')
+            echo "new image name: $new_image_name_tag"
             new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$new_image_name_tag"
             echo "docker tag $image $new_image"
             docker tag $image $new_image
