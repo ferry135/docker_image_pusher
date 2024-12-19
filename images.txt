@@ -1,3 +1,4 @@
 registry.k8s.io/ingress-nginx/controller:v1.3.1 ingress-nginx-controller:v1.3.1
 node:20-slim node:20-slim
 node:16-slim node:16-slim
+busybox:latest busybox:latest
